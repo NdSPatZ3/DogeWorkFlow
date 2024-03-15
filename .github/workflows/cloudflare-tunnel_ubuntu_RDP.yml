@@ -27,8 +27,8 @@ jobs:
         #SCRIPT END
     - name: Cloudflare Tunnel setting(Linux)
       run: |
-         mkdir -p /home/$user/.cloudflared/
-         echo "${{ secrets.CLOUDFLARE_CERT_PEM }}" | sudo tee -a /home/$user/.cloudflared/cert.pem
+         mkdir -p /home/o-o/.cloudflared/
+         echo "${{ secrets.CLOUDFLARE_CERT_PEM }}" | sudo tee -a /home/o-o/.cloudflared/cert.pem
          curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && 
          sudo dpkg -i cloudflared.deb && 
          sudo cloudflared service install eyJhIjoiMWI0ZDhlNjg3NTg2MzcwODY1NzU5Y2UwMzFlZDMyMzYiLCJ0IjoiMzViNTBmOGEtMDM1MS00ZmQ1LWE4OGQtNzkwNDhiZDdiMzNjIiwicyI6Ik5qSTJORFUwT1dNdFl6TTNNQzAwWXpGaExUa3hNV1V0TjJVMU5XRmtaREEwTmpreiJ9
