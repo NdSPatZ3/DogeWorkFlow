@@ -48,7 +48,6 @@ jobs:
         sudo apt install openssh-server
         sudo systemctl status ssh
         sudo apt-get update # mass install
-        sudo apt install ubuntu-desktop
         sudo apt install xorg
         sudo apt install xrdp
         sudo apt install xorgxrdp
@@ -57,14 +56,9 @@ jobs:
         sudo apt install xfonts-base
         sudo apt install xfonts-75dpi
         sudo apt install xfonts-100dpi
-        sudo apt install mate-core
-        sudo apt install mate-desktop-environment
-        sudo apt install mate-notification-daemon
         sudo apt install ubuntu-gnome-desktop
         sudo apt install gnome-session-flashback
         sudo apt install gnome-panel
-        sudo apt install xfce4
-        sudo apt install xfce4-goodies
         sudo apt-get autoremove -y
 
     - name: Auth
@@ -93,7 +87,7 @@ jobs:
        export LIBGL_ALWAYS_INDIRECT=1
        unset SESSION_MANAGER
        unset DBUS_SESSION_BUS_ADDRESS
-       mate-session
+       exec gnome-session
        EOF
        chmod +x /home/${USER}/.xsession #session manager
     - name: Run Bash
